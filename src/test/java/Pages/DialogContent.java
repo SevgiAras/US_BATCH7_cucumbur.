@@ -2,9 +2,12 @@ package Pages;
 
 import Utilities.BasicDriver;
 import Utilities.MyMethod;
+import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class DialogContent extends MyMethod {
     public DialogContent() {
@@ -37,6 +40,28 @@ public class DialogContent extends MyMethod {
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
+
+    @FindBy(xpath = "//div=['cconsent-bar']//button[@class='consent-give']")
+    private WebElement  acceptCookies;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Name'])[1]")
+    private WebElement countryNAmeSearch;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Code'])[1]")
+    private WebElement countryCodeSearch;
+
+    @FindBy(xpath = "//span[text()='Search']")
+    private WebElement countrySearchBtn;
+
+    @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
+    private WebElement deleteCountryBtn;
+
+    @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
+    private List<WebElement> deleteCountryBtnList;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement confirmDeleteCountry;
+
 
 
 
@@ -77,5 +102,31 @@ public class DialogContent extends MyMethod {
         return successMessage;
     }
 
-
+    public WebElement getAcceptCookies() {
+        return acceptCookies;
     }
+
+    public WebElement getCountryNAmeSearch() {
+        return countryNAmeSearch;
+    }
+
+    public WebElement getCountryCodeSearch() {
+        return countryCodeSearch;
+    }
+
+    public WebElement getCountrySearchBtn() {
+        return countrySearchBtn;
+    }
+
+    public WebElement getDeleteCountryBtn() {
+        return deleteCountryBtn;
+    }
+
+    public WebElement getConfirmDeleteCountry() {
+        return confirmDeleteCountry;
+    }
+
+    public List<WebElement> getDeleteCountryBtnList() {
+        return deleteCountryBtnList;
+    }
+}

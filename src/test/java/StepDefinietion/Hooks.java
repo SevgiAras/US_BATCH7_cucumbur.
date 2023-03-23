@@ -15,13 +15,13 @@ public class Hooks {
     @After // This method runs after every scenario
     public void afterScenario(Scenario scenario) {
         System.out.println("Scenario has ended");
-//        if (scenario.isFailed()) {
-//
-//            final byte[] byteImage = ((TakesScreenshot) BasicDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
-//            scenario.attach(byteImage, "image/png", scenario.getName());
-        }
+        if (scenario.isFailed()) {
 
-    }
+            final byte[] byteImage = ((TakesScreenshot) BasicDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(byteImage, "image/png", scenario.getName());
+         }
+//
+         }
 //
 //    @BeforeStep
 //    public void beforeStep(){
@@ -33,4 +33,6 @@ public class Hooks {
 //        System.out.println("Step has ended");
 //    }
 
+
+    }
 
