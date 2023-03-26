@@ -2,6 +2,7 @@ package StepDefinietion;
 
 import Pages.DialogContent;
 import Pages.Navigation;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -24,8 +25,8 @@ public class _02_CountrySteps {
     @When("Create a new country")
     public void create_a_new_country() {
         dc.clickMethod(dc.getAddButton());
-        dc.sendKeysMethod(dc.getFormNameInput(),"ClGR0");
-        dc.sendKeysMethod(dc.getFormCodeInput(),"U11");
+        dc.sendKeysMethod(dc.getFormNameInput(),"S2");
+        dc.sendKeysMethod(dc.getFormCodeInput(),"11");
         dc.clickMethod(dc.getSaveButton());
 
 
@@ -40,12 +41,31 @@ public class _02_CountrySteps {
     @When("Delete country")
     public void deleteCountry() {
 
-        dc.sendKeysMethod(dc.getCountryNAmeSearch(),"CLGR0");
-        dc.sendKeysMethod(dc.getCountryCodeSearch(),"U11");
-        dc.clickMethod(dc.getCountrySearchBtn());
+        dc.sendKeysMethod(dc.getNameSearch(),"S2");
+        dc.sendKeysMethod(dc.getCodeSearch(),"11");
+        dc.clickMethod(dc.getSearchBtn());
        dc.wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.cssSelector("ms-delete-button[class='ng-star-inserted']"), 10));
-        dc.clickMethod(dc.getDeleteCountryBtn());
-        dc.clickMethod(dc.getConfirmDeleteCountry());
+        dc.clickMethod(dc.getDeleteBtn());
+        dc.clickMethod(dc.getConfirmDeleteBtn());
+
+    }
+
+    @And("Click on add button")
+    public void clickOnAddButton() {
+        dc.clickMethod(dc.getAddButton());
+    }
+
+    @When("Enter country name as {string} and code as {string}")
+    public void enterCountryNameAsAndCodeAs(String countryName, String countryCode) {
+    dc.sendKeysMethod(dc.getFormNameInput(),countryName);
+    dc.sendKeysMethod(dc.getFormCodeInput(),countryCode);
+
+
+    }
+
+    @And("Click on save button")
+    public void clickOnSaveButton() {
+   dc.clickMethod(dc.getSaveButton());
 
     }
 }

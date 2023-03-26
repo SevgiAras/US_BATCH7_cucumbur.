@@ -45,25 +45,28 @@ public class DialogContent extends MyMethod {
     private WebElement  acceptCookies;
 
     @FindBy(xpath = "(//input[@data-placeholder='Name'])[1]")
-    private WebElement countryNAmeSearch;
+    private WebElement nameSearch;
 
     @FindBy(xpath = "(//input[@data-placeholder='Code'])[1]")
-    private WebElement countryCodeSearch;
+    private WebElement codeSearch;
 
     @FindBy(xpath = "//span[text()='Search']")
-    private WebElement countrySearchBtn;
+    private WebElement searchBtn;
 
     @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
-    private WebElement deleteCountryBtn;
+    private WebElement deleteBtn;
 
     @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
     private List<WebElement> deleteCountryBtnList;
 
     @FindBy(xpath = "//span[contains(text(),'Delete')]")
-    private WebElement confirmDeleteCountry;
+    private WebElement confirmDeleteBtn;
 
+    @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
+    private WebElement citizenshipShortNameSearch;
 
-
+    @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
+    private WebElement citizenshipShortName;
 
 
     public WebElement getLoginUsername() {
@@ -106,27 +109,35 @@ public class DialogContent extends MyMethod {
         return acceptCookies;
     }
 
-    public WebElement getCountryNAmeSearch() {
-        return countryNAmeSearch;
+    public WebElement getNameSearch() {
+        return nameSearch;
     }
 
-    public WebElement getCountryCodeSearch() {
-        return countryCodeSearch;
+    public WebElement getCodeSearch() {
+        return codeSearch;
     }
 
-    public WebElement getCountrySearchBtn() {
-        return countrySearchBtn;
+    public WebElement getSearchBtn() {
+        return searchBtn;
     }
 
-    public WebElement getDeleteCountryBtn() {
-        return deleteCountryBtn;
+    public WebElement getDeleteBtn() {
+        return deleteBtn;
     }
 
-    public WebElement getConfirmDeleteCountry() {
-        return confirmDeleteCountry;
+    public WebElement getConfirmDeleteBtn() {
+        return confirmDeleteBtn;
     }
 
     public List<WebElement> getDeleteCountryBtnList() {
         return deleteCountryBtnList;
+    }
+
+    public WebElement getCitizenshipShortName() {
+        return citizenshipShortName;
+    }
+
+    public WebElement getCitizenshipShortNameSearch() {
+        return citizenshipShortNameSearch;
     }
 }
