@@ -22,3 +22,6 @@ Feature:Data Table Example
         | Address   | 2356 Spring Ave. |
         | Phone     | 8654123658       |
       Then Save the form
+#Sceneraio outline runs the entire scneraio for each set of data
+#  Data table sends the entire data to only one steps at the same time
+#  and runs the Scenario once

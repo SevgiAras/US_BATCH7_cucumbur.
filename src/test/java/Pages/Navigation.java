@@ -23,6 +23,10 @@ public class Navigation extends MyMethod {
     @FindBy(xpath = "//a [@href='/citizenships/list']")
     private WebElement citizenShipButton;
 
+
+    @FindBy(xpath = "(//span[text()='Fees'])[1]")
+    private WebElement feesButton;
+
     public WebElement getSetupBtn() {
         return setupBtn;
     }
@@ -37,6 +41,11 @@ public class Navigation extends MyMethod {
 
     public WebElement getCitizenShipButton() {
         return citizenShipButton;
+
+    }
+
+    public WebElement getFeesButton() {
+        return feesButton;
     }
 }
 

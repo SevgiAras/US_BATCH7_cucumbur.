@@ -68,6 +68,16 @@ public class DialogContent extends MyMethod {
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[1]")
     private WebElement citizenshipShortName;
 
+    @FindBy(xpath = "//input[@data-placeholder='Integration Code']")
+    private WebElement integrationCodeButton;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[2]")
+    private WebElement priorityInput;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
+    private WebElement prioritySearchInput;
+
+
 
     public WebElement getLoginUsername() {
         return loginUsername;
@@ -139,5 +149,17 @@ public class DialogContent extends MyMethod {
 
     public WebElement getCitizenshipShortNameSearch() {
         return citizenshipShortNameSearch;
+    }
+
+    public WebElement getIntegrationCodeButton() {
+        return integrationCodeButton;
+    }
+
+    public WebElement getPriorityInput() {
+        return priorityInput;
+    }
+
+    public WebElement getPrioritySearchInput() {
+        return prioritySearchInput;
     }
 }
