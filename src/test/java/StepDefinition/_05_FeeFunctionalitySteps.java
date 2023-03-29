@@ -1,8 +1,8 @@
-package StepDefinietion;
+package StepDefinition;
 
 import Pages.DialogContent;
 import Pages.Navigation;
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -34,7 +34,7 @@ public class _05_FeeFunctionalitySteps {
         dc.sendKeysMethod(dc.getFormCodeInput(),dataList.get(1));
         dc.sendKeysMethod(dc.getIntegrationCodeButton(),dataList.get(2));
         dc.sendKeysMethod(dc.getPriorityInput(),dataList.get(3));
-        Actions actions=new Actions(BasicDriver.getDriver());
+        Actions actions=new Actions(DriverClass.getDriver());
         Action action =actions.sendKeys(Keys.TAB).build();
         action.perform();
 

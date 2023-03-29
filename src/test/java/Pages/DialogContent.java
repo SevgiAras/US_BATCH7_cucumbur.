@@ -1,8 +1,7 @@
 package Pages;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import Utilities.MyMethod;
-import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class DialogContent extends MyMethod {
     public DialogContent() {
-        PageFactory.initElements(BasicDriver.getDriver(), this);
+        PageFactory.initElements(DriverClass.getDriver(), this);
 
     }
     @FindBy(css = "input[placeholder='Username']")
@@ -77,6 +76,39 @@ public class DialogContent extends MyMethod {
     @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
     private WebElement prioritySearchInput;
 
+    @FindBy(xpath = "//input[@data-placeholder='Name']")
+    private WebElement entranceExamsCreateNameInput;
+
+
+    @FindBy(xpath = "//span[text()=' 2022-2023 Academic Period ']")
+    private WebElement academicPeriodOption;
+
+
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='id']")
+    private WebElement gradeLevelSelect;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[1]")
+    private WebElement gradeLevelOption;
+
+
+    @FindBy(xpath = "(//div[@role='tab'])[3]")
+    private WebElement description;
+
+    @FindBy(css = "body[id='tinymce']>p")
+    private WebElement descriptionAndNoteInput;
+
+    @FindBy(xpath = "(//div[@role='tab'])[4]")
+    private WebElement note;
+
+    @FindBy(css = "iframe[class='tox-edit-area__iframe']")
+    private WebElement descriptionAndNoteIFrame;
+
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='academicPeriod']")
+    private WebElement academicPeriodSelect;
+
+
 
 
     public WebElement getLoginUsername() {
@@ -101,6 +133,10 @@ public class DialogContent extends MyMethod {
 
     public WebElement getFormNameInput() {
         return formNameInput;
+    }
+
+    public WebElement getEntranceExamsCreateNameInput() {
+        return entranceExamsCreateNameInput;
     }
 
     public WebElement getFormCodeInput() {
@@ -161,5 +197,38 @@ public class DialogContent extends MyMethod {
 
     public WebElement getPrioritySearchInput() {
         return prioritySearchInput;
+    }
+
+
+    public WebElement getAcademicPeriodOption() {
+        return academicPeriodOption;
+    }
+
+    public WebElement getGradeLevelSelect() {
+        return gradeLevelSelect;
+    }
+
+    public WebElement getGradeLevelOption() {
+        return gradeLevelOption;
+    }
+
+    public WebElement getDescription() {
+        return description;
+    }
+
+    public WebElement getDescriptionAndNoteInput() {
+        return descriptionAndNoteInput;
+    }
+
+    public WebElement getNote() {
+        return note;
+    }
+
+    public WebElement getDescriptionAndNoteIFrame() {
+        return descriptionAndNoteIFrame;
+    }
+
+    public WebElement getAcademicPeriodSelect() {
+        return academicPeriodSelect;
     }
 }

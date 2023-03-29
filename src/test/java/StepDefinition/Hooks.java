@@ -1,6 +1,6 @@
-package StepDefinietion;
+package StepDefinition;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,12 +15,12 @@ public class Hooks {
     @After // This method runs after every scenario
     public void afterScenario(Scenario scenario) {
         System.out.println("Scenario has ended");
-        if (scenario.isFailed()) {
-
-            final byte[] byteImage = ((TakesScreenshot) BasicDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(byteImage, "image/png", scenario.getName());
-         }
-        BasicDriver.quitDriver();
+        if (scenario.isFailed()){
+            byte[] byteImage = ((TakesScreenshot) DriverClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(byteImage,"image/png","screenShot name");
+        }
+        DriverClass.quitDriver();
+        System.out.println("Scenario has ended");
 
   }
 

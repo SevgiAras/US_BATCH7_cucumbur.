@@ -1,6 +1,6 @@
 package Pages;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import Utilities.MyMethod;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class Navigation extends MyMethod {
     public Navigation() {
 
-        PageFactory.initElements(BasicDriver.getDriver(),this);
+        PageFactory.initElements(DriverClass.getDriver(),this);
     }
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement setupBtn;
@@ -26,6 +26,15 @@ public class Navigation extends MyMethod {
 
     @FindBy(xpath = "(//span[text()='Fees'])[1]")
     private WebElement feesButton;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[1]")
+    private WebElement entranceExamsButton;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[2]")
+    private WebElement entranceExamsSetupButton;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
+    private  WebElement entranceExamsInnerButton;
 
     public WebElement getSetupBtn() {
         return setupBtn;
@@ -46,6 +55,18 @@ public class Navigation extends MyMethod {
 
     public WebElement getFeesButton() {
         return feesButton;
+    }
+
+    public WebElement getEntranceExamsButton() {
+        return entranceExamsButton;
+    }
+
+    public WebElement getEntranceExamsSetupButton() {
+        return entranceExamsSetupButton;
+    }
+
+    public WebElement getEntranceExamsInnerButton() {
+        return entranceExamsInnerButton;
     }
 }
 
