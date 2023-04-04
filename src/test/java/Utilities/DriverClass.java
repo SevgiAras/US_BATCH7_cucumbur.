@@ -10,7 +10,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class DriverClass {
 
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
-    private static ThreadLocal<String> threadDriverName = new ThreadLocal<>();
+    public static ThreadLocal<String> threadDriverName = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         if (threadDriver.get() == null) {
@@ -48,7 +48,12 @@ public class DriverClass {
         }
         if (threadDriver.get() != null) {
             threadDriver.get().quit();
+            WebDriver driver=null;
+            threadDriver.set(driver);
         }
+    }
+    public static void setThreadDriverName(String browserName){
+        threadDriverName.set(browserName);
     }
 }
 
