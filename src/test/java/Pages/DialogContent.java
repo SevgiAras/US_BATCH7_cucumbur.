@@ -108,6 +108,10 @@ public class DialogContent extends MyMethod {
     @FindBy(xpath = "//mat-select[@formcontrolname='academicPeriod']")
     private WebElement academicPeriodSelect;
 
+    @FindBy(xpath = "//tbody[@role='rowgroup']//td[2]")
+    private List<WebElement> statesList;
+
+
 
 
 
@@ -230,5 +234,9 @@ public class DialogContent extends MyMethod {
 
     public WebElement getAcademicPeriodSelect() {
         return academicPeriodSelect;
+    }
+
+    public List<WebElement> getStatesList() {
+        return statesList;
     }
 }
